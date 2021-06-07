@@ -15,5 +15,11 @@ kind create cluster --config=k8s/kind.yaml --name=sample-project-cluster
  
  ## How to create/run pod
  ```
- kubectl apply -f k8s/pod.yaml
+ kubectl apply -f k8s/deployment.yaml
+ kubectl apply -f k8s/service.yaml
+ ```
+
+ ## How to access service
+ ```
+ kubectl port-forward svc/goserver-service 8001:8001
  ```
