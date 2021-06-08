@@ -17,6 +17,12 @@ spec:
       containers:
         - name: goserver
           image: "caioq/sample-go-kubernetes:v3"
-          env:
-            - name: NAME
-              value: "Caio"
+          envFrom:
+            - configMapRef:
+                name: goserver-env
+          # env:
+          #   - name: NAME
+          #     valueFrom:
+          #       configMapKeyRef: 
+          #         name: goserver-env
+          #         key: NAME

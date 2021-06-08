@@ -13,7 +13,7 @@ docker run --rm -p 8001:8001 caioq/sample-go-kubernetes
 kind create cluster --config=k8s/kind.yaml --name=sample-project-cluster
 ```
  
- ## How to create/run pod
+ ## How to create/run pods and load balancer service
  ```
  kubectl apply -f k8s/deployment.yaml
  kubectl apply -f k8s/service.yaml
