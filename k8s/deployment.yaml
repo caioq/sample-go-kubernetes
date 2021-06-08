@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: goserver
-          image: "caioq/sample-go-kubernetes:v3"
+          image: "caioq/sample-go-kubernetes:v5.1"
           envFrom:
             - configMapRef:
                 name: goserver-env
@@ -26,3 +26,16 @@ spec:
           #       configMapKeyRef: 
           #         name: goserver-env
           #         key: NAME
+
+          volumeMounts:
+            - mountPath: "/go/myfamily"
+              name: config
+
+
+      volumes:
+        - name: config
+          configMap:
+            name: configmap-family
+            items:
+            - key: members
+              path: "family.txt"
