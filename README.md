@@ -15,6 +15,7 @@ kind create cluster --config=k8s/kind.yaml --name=sample-project-cluster
  
  ## How to create/run pods and load balancer service
  ```
+ kubectl apply -f k8s/configmap-family.yaml
  kubectl apply -f k8s/deployment.yaml
  kubectl apply -f k8s/service.yaml
  ```
