@@ -17,6 +17,14 @@ spec:
       containers:
         - name: goserver
           image: "caioq/sample-go-kubernetes:v5.3"
+            
+          readinessProbe:
+            httpGet:
+              path: /healthz
+              port: 8001
+            periodSeconds: 3
+            failureThreshold: 1
+            initialDelaySeconds: 10
 
           livenessProbe:
             httpGet:
@@ -26,7 +34,7 @@ spec:
             failureThreshold: 1
             timeoutSeconds: 1
             successThreshold: 1
-            # initialDelaySeconds: 15
+            initialDelaySeconds: 15
 
           envFrom:
             - configMapRef:
