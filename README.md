@@ -20,6 +20,11 @@ kind create cluster --config=k8s/kind.yaml --name=sample-project-cluster
  kubectl apply -f k8s/service.yaml
  ```
 
+ ## Using metric server
+ ```
+ kubectl apply -f k8s/metrics-server.yaml
+ ```
+
  ## How to access service
  ```
  kubectl port-forward svc/goserver-service 8001:8001
