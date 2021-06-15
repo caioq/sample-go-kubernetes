@@ -17,7 +17,13 @@ kind create cluster --config=k8s/kind.yaml --name=sample-project-cluster
  ```
  kubectl apply -f k8s/configmap-family.yaml
  kubectl apply -f k8s/deployment.yaml
+ ```
+ ```
  kubectl apply -f k8s/service.yaml
+ ```
+ or
+ ```
+ kubectl apply -f k8s/hpa.yaml
  ```
 
  ## Using metric server
